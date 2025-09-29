@@ -14,14 +14,14 @@ import asyncio
 
 # 设置环境变量
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = "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"
-os.environ["LANGCHAIN_PROJECT"] = "Diabetic_Retinopathy_Diagnosis"
-os.environ["LANGSMITH_ENDPOINT"] = "https://api.smith.langchain.com"
+os.environ["LANGCHAIN_API_KEY"] = ""
+os.environ["LANGCHAIN_PROJECT"] = ""
+os.environ["LANGSMITH_ENDPOINT"] = ""
 
 # 初始化大模型
 llm = ChatTongyi(
-    model="qwen-plus",
-    api_key="sk-06cb8603d6784d53970f60bfdc372481"
+    model="",
+    api_key=""
 )
 
 # 定义状态
@@ -397,4 +397,5 @@ builder.add_edge("other_node", "supervisor_node")
 
 # 编译图
 checkpointer = InMemorySaver()
+
 graph = builder.compile(checkpointer=checkpointer)
